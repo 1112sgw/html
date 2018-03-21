@@ -1,0 +1,277 @@
+.page, .page-group {
+    background: #fff;
+}
+img { 
+    width: 100%;
+}
+ul, li{
+    margin: 0;
+    padding:0;
+}
+h1,h2,h3,h4,h5,p{
+    margin:5px 0;
+}
+ul li{
+    list-style: none;
+}
+a {
+    color:#000;
+}
+p{
+    font-size: 0.8rem
+}
+
+img.blue-icon{
+    width: 1.2rem;
+    display: inline-block;
+    margin: 0.5rem 0;
+}
+
+hr.gray {
+    background: #c7c7c7;
+    height: 3px;
+    border: 0;
+}
+
+.bar{
+    background: #fff;
+}
+
+.content {
+    padding: 5px 10px;
+}
+
+.title{
+    font-weight: bold;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+/***************Right Menu*********************/
+ul.nav-menu{
+    display: none;
+}
+ul.nav-menu li{
+    height: 2.2rem;
+    display: block;
+    position: relative;
+    border-bottom: 1px solid #eee;
+}
+ul.nav-menu li a{
+    height: 100%;
+    line-height: 2.2rem;
+    float: left;
+}
+
+ul.nav-menu li a img{
+    float: left;
+    margin: 0.5rem 0.6rem;
+}
+ul.nav-menu li a span{
+    float: left;
+    height: 100%;
+    padding-top: 0.2rem;
+    padding-left:  0.3rem;
+    color: #000;
+    font-weight: 500;
+}
+
+ul.nav-menu.toggled-on,
+.menu-toggle {
+	display: inline-block;
+	background: #fff;
+	width: 100%;
+	text-align: center;
+	padding-left: 0.2rem;
+	border: 1px solid #eee;
+}
+.menu-mobile_menu-container{
+    width: 42%;
+    margin-left: 58%;
+    position: absolute;
+    top: 2.2rem;
+    right: 0;
+}
+
+#back .blue-icon{
+    width: 0.6rem;
+}
+
+.gray-background{
+    background: #efeff4;
+}
+
+/************Home page***************/
+
+.row .home-link {
+    padding: 0.5rem 0.8rem;
+}
+.border-title {
+    font-size: 1rem;
+    font-weight: bold;
+    border-left: 5px solid #529dfe;
+    line-height: 1rem;
+    padding-left: 0.4rem;
+    margin: 0.5rem 0;
+}
+.swiper-container-horizontal>.swiper-pagination{
+    bottom: 5px;
+}
+.swiper-container{
+    padding-bottom: 0;
+}
+
+.home-img-title{
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/************meeting detail page***************/
+.text-center {
+    text-align: center;
+}
+
+.article-type{
+    color: #aaa;
+}
+.article-meta{
+    height: 1rem;
+}
+.article-content{
+    padding-top: 10px;
+}
+.article-date{
+    margin-left:33%; 
+    width: 33%;
+    float: left;
+    color: #aaa;
+}
+.article-views{
+    width: 33%;
+    float: left;
+    text-align: right;
+    color: #82786f;
+}
+.article-content p{
+    color: #82786f;
+}
+ul.list li{
+    padding: 10px;
+    background: #fff;
+    margin: 0 -10px;
+    border-bottom: 2px solid #efeff4;
+}
+.list-title{
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.list-description{
+    font-size: 0.8rem;
+    max-height: 1.75rem;
+    overflow: hidden;
+}
+.list-description p{
+    margin: 0;
+    line-height: 0.9rem;
+}
+.list-location{
+    font-size: 0.7rem;
+    color: #aaa;
+}
+.list-date{
+    float: right;
+    font-size: 0.7rem;
+    color: #aaa;
+}
+.list-view{
+    float:left;
+    font-size: 0.7rem;
+    color: #aaa;
+}
+.list .thumbnail {
+    height: 80px;
+    margin-left: 2%;
+}
+.thumbnail img{
+    height: 100%;
+}
+.list-price{
+    font-size: 0.7rem;
+    color: #aaa;
+}
+.list-price span{
+    color: #d52b1e
+}
+.list-hot{
+    font-size: 0.7rem;
+    color: #aaa;
+}
+.list-hot span{
+    color: #d57c1e
+}
+.list-price span.extra{
+    color: #aaa;
+}
+
+.list-meeting{
+    font-size: 0.7rem;
+    color: #aaa;
+}
+/******************organization******************/
+.org-position{
+    font-weight: bold;
+}
+.org-info{
+    padding-left: 10px;  
+}
+.org-name{
+    color: #529dfe;
+    display: inline-block;
+}
+.name-title{
+    width: 100%;
+}
+.org-title{
+    padding-left:5px;
+    color: #c8c8c8;
+    display: inline-block;
+}
+.org-intro{
+    width: 100%;
+    text-align: left;
+}
+.sub-title{
+    font-weight: bold;
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: 1px solid #d1d1d1;
+}
+.meeting-organization .row{
+    padding:10px 0;
+}
+
+.bottom-line{
+    border-bottom: 1px solid #d1d1d1;
+}
+.select-search-area{
+    margin: -5px -10px;
+}
+
+.select-search-area .tab {
+  margin: -5px -10px;
+  padding: 10px;
+  border: 1px solid #d1d1d1;
+}
+.select-search-area .tab input{
+    width: 100%;
+    height: 100%;
+    border: 0;
+    text-align: center;
+}
+
+.meeting-more, .meeting-video{
+    padding-top: 10px;
+}

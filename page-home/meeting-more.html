@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="../css/sm.min.css">
+    <link rel="stylesheet" href="../css/sm-extend.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>更多会议</title>
+  </head>
+  <body>
+
+    <div class="page-group">
+      <div class="page page-current">
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left" id="back">
+                <img src="../images/back.png" alt="后退" class="blue-icon" />
+            </a>
+            <h1 class="title">更多会议</h1>
+        </header>
+        <div class="content">
+          <div class="select-search-area">
+              <div class="row no-gutter">
+                <div class="col-25 tab"><input type="text" id='office_picker' placeholder="科室类别" /></div>
+                <div class="col-25 tab"><input type="text" id='province_picker' placeholder="省份" /></div>
+                <div class="col-25 tab"><input type="text" id='year_picker' placeholder="年份" /></div>
+                <div class="col-25 tab"><input type="text" id='month_picker' placeholder="月份" /></div>
+              </div>
+          </div>
+            <!-- Slider -->
+          <div class="meeting-more">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  <script id="template_meeting_more" type="text/template7">
+    <ul class="list">
+      {{#each meetingList}}
+        <li class="row">     
+          <div class="thumbnail col-33"><img src={{imgUrl}} alt={{title}} /></div>
+          <div class="list-thumbnailbrief col-66">
+            <div class="list-title">{{title}}</div>
+            <div class="list-meta row">
+              <div class="list-location col-50">{{location}}</div>
+              <div class="list-date col-50">{{date}}</div>
+            </div>
+            <div class="list-price">
+                报名费 <span>{{price}} </span>起
+            </div>
+            <div class="list-hot">
+                人气 <span>{{views}}</span>
+            </div>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+  </script> 
+  </body>
+  <script type='text/javascript' src='../js/zepto.min.js' charset='utf-8'></script>
+  <script type='text/javascript' src='../js/sm.min.js' charset='utf-8'></script>
+  <script type='text/javascript' src='../js/sm-extend.min.js' charset='utf-8'></script>
+  <script type='text/javascript' src='../js/template7.min.js' charset='utf-8'></script>
+  <script type='text/javascript' src='../js/main.js' charset='utf-8'></script>
+  <script type='text/javascript' src="../js/pages/meeting-more.js" charset="utf-8"></script>
+  
+</html>
