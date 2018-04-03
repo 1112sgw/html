@@ -1,5 +1,5 @@
 
-$(function() {
+Zepto(function($){
 
     var template = $('#template_meeting_video').html();
     var compiledTemplate = Template7.compile(template);

@@ -1,40 +1,40 @@
 
-$(function() {
+Zepto(function($){
     $.get("/",function(response){
         var result = [
             {
                 imgUrl: "./images/orgnization.png",
                 title: "大会组织",
-                url: "./page-home/meeting-organization.html",
+                url: "/pages/meeting-organization.html",
             },
             {
                 imgUrl: "./images/profession.png",
                 title: "参会专家",
-                url: "./page-home/meeting-profession.html",
+                url: "/pages/meeting-specialist.html",
             },
             {
                 imgUrl: "./images/artical.png",
                 title: "大会征文",
-                url: "./page-home/meeting-essay.html",
+                url: "/pages/meeting-essay.html",
             },
             {
                 imgUrl: "./images/schedule.png",
                 title: "会议日程",
-                url: "./page-home/meeting-more.html",
+                url: "/pages/meeting-schedule.html",
             },
             {
                 imgUrl: "./images/meeting_video.png",
                 title: "会议视频",
-                url: "./page-home/meeting-video.html",
+                url: "/pages/meeting-video.html",
             },
             {
                 imgUrl: "./images/news.png",
                 title: "大会新闻",
-                url: "./page-home/meeting-introduction.html",
+                url: "/pages/meeting-introduction.html",
             },
         ]
         $.each(result, function(index, item){
-            $("#link_area .row").append('<div class="col-33 home-link"><a href=' + item.url + '><img src=' + item.imgUrl + ' /><div class="home-img-title">'+ item.title +'</div></a></div>')
+            $("#link_area .row").append('<div class="col-33 home-link"><a href=' + item.url + ' external><img src=' + item.imgUrl + ' /><div class="home-img-title">'+ item.title +'</div></a></div>')
         })
     })
     initSlider();

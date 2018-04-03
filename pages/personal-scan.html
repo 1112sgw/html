@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../css/sm.min.css">
+    <link rel="stylesheet" href="../css/sm-extend.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>会议详情</title>
+  </head>
+  <body>
+
+    <div class="page-group">
+      <div class="page page-current">
+        <header class="bar bar-nav">
+            <a external class="button button-link button-nav pull-left" id="back">
+                <img src="../images/back.png" alt="后退" class="blue-icon" />
+            </a>
+            <h1 class="title">二维码/条形码</h1>
+        </header>
+        <div class="content  scan-background">
+            <div id="qrcode-reader" style="width:250px;height:250px">
+            </div>
+            <div class="tips">请扫描二维码或条形码</div>
+        </div>
+      </div>
+    </div>
+   
+  </body>
+  <script type='text/javascript' src='../js/jquery.min.js' charset='utf-8'></script>
+  <script type='text/javascript' src='../js/jsqrcode-combined.min.js' charset='utf-8'></script>
+  <script type='text/javascript' src='../js/html5-qrcode.js' charset='utf-8'></script>
+  <script type='text/javascript' src='../js/scan.js' charset='utf-8'></script>
+</html>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1"> 
     <link rel="shortcut icon" href="./favicon.ico">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -11,62 +11,45 @@
     <link rel="stylesheet" href="./css/sm.min.css">
     <link rel="stylesheet" href="./css/sm-extend.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    <title>首页</title>
+    <title>登录</title>
   </head>
   <body>
-
     <div class="page-group">
-      <div class="page page-current">
-        <header class="bar bar-nav">
-            <a class="button button-link button-nav pull-left" href="/demos/card" data-transition='slide-out'>
-                <img src="./images/logo.png" alt="中国危重病医学大会" class="blue-icon" />
-            </a>
-
-            <a href="javascript:void(0)" class="button button-link button-nav pull-right" id="personal">
-                <img src="./images/menu.png" alt="菜单" class="blue-icon" />
-            </a>
-            <nav role="navigation" class="menu-mobile_menu-container">
-                <ul id="menu-mobile_menu" class="nav-menu">
-                    <li>
-                        <a href="/personal-center.html">
-                            <img src="./images/user.png" alt="个人中心" class="blue-icon" />
-                            <span>个人中心</span>
-                        </a>
-                    </li>
-                    <li class="coming">
-                        <a>
-                            <img src="./images/scan.png" alt="扫一扫" class="blue-icon" />
-                            <span class="span-soon">扫一扫</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <div class="content">
-            <!-- Slider -->
-          <div class="swiper-container">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide"><img src="./images/u15.png" alt=""></div>
-              <div class="swiper-slide"><img src="./images/u0.png" alt=""></div>
-              <div class="swiper-slide"><img src="./images/u861.png" alt=""></div>
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-
-          <div class="content-padded grid-demo" id="link_area">
-            <div class="row">     
-            </div>
-          </div>
-          <hr class="gray" />
-          <div class="content-padded grid-demo" id="introduction">
-            <div class="border-title">大会简介</div>
-            <p>
-                国家会议中心位于鸟巢和水立方之北，是一座八层楼、近400米的长形建筑。2008年奥运会期间，由击剑馆、国际广播中心组成。
-                主新闻中心（MPC）是文字记者和摄影记者进驻的工作区，共有1000多个记者工作席位及硬件配套设施。国际广播中心建筑面积14万平方米，是奥运会历史上最大的国际广播中心，来自全世界16000名广播记者都在此工作。
-                奥运之后，国家会议中心经过一年多的改造投入经营，至今已走过七年历程，创造了无数辉煌，这座曾经的奥运场馆正以骄人的成绩，成为中国乃至亚洲快速成长的会展业第一品牌。大量具有国际影响力的会议、展览项目陆续在国家会议中心成功举办，让这个中国会议业的旗舰场馆向世界展示了其多平台、复合型、高质量的强大综合实力，创造出了良好的经济效益和社会效益。
-                2014年11月5日—10日，来自21个经济体以及这 21个经济体以外的17个国家和地区的领导人、高级官员和工商界人士相继出席APEC会议周[1]  。国家会议中心作为本次APEC会议的“主力场馆”承担着为期7天的领导人会议周中6天的接待任务，为210场规模不等的会议和活动、165场餐饮和约9.1万人次提供了专业、细致、高效的会议服务。国家会议中心再次成为世界瞩目的焦点[1]  。国家会议中心借此成为一个重大外事国务活动的接待场所，也变成了世界级的会展品牌[2]  。
-            </p>
-          </div>
+        <div class="page page-current">
+            <header class="bar bar-nav">
+                <h1 class="title">登录</h1>
+            </header>
+        <div class="content gray-background">
+            <div class="login-form list-block">
+                <div class="login-input item-input inner">
+                    <input type="text" placeholder="请输入手机号" />
+                    <div class="get-code">获取验证码</div>
+                </div>
+                <div class="login-input item-input inner">
+                    <input type="text" placeholder="请输入右侧图形中的数字" />
+                    <div class="code"><img src="../images/code.png" /></div>
+                </div>
+                <div class="login-input item-input inner">
+                    <input type="text" placeholder="请输入手机号" />
+                </div>
+                <div class="login-blue login-button">
+                    登陆
+                </div>
+                <a href="register.html" class="login-register">注册</a>
+            </div>     
+            <div class="login-third-part">
+                <div class="third-part-title">--------- 第三方登录快捷登录 ---------</div>
+                <div class="login-ways row no-gutter">
+                    <a external href="" class="col-50">
+                        <img src="../images/pay_zhifubao.png">
+                        <span>支付宝</span>
+                    </a>
+                    <a external href="" class="col-50">
+                        <img src="../images/pay_weixin.png">
+                        <span>微信</span>
+                    </a>
+                </div>
+            </div>  
         </div>
       </div>
     </div>
@@ -77,5 +60,5 @@
   <script type='text/javascript' src='./js/sm-extend.min.js' charset='utf-8'></script>
   <script type='text/javascript' src='./js/template7.min.js' charset='utf-8'></script>
   <script type='text/javascript' src='./js/main.js' charset='utf-8'></script>
-  <script type='text/javascript' src="./js/home.js" charset="utf-8"></script>
+  <script type='text/javascript' src="./js/pages/login.js" charset="utf-8"></script>
 </html>

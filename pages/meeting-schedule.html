@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../css/sm.min.css">
+    <link rel="stylesheet" href="../css/sm-extend.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>会议日程</title>
+  </head>
+  <body>
+
+    <div class="page-group">
+      <div class="page page-current">
+        <header class="bar bar-nav">
+            <a external class="button button-link button-nav pull-left" id="back">
+                <img src="../images/back.png" alt="后退" class="blue-icon" />
+            </a>
+            <h1 class="title">会议日程</h1>
+        </header>
+        <div class="content gray-background">
+          <div class="schedule-detail common-list">
+            <div class="schedule-table table_box_big"></div>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script id="template_schedule_table" type="text/template7">
+    <div class="table_box">
+      <table class="list tableLayoutFixed">
+        <thead>
+          <th class="dateImg">
+            <input type="text" id="dateChoose" readonly />
+          </th>
+          {{#each locationList}}
+            <th class="meeting-location">
+              <div class="location-name">{{locationName}}</div>
+            </th>
+          {{/each}}
+        </thead>
+        <tbody> 
+          {{#each dateList}} 
+            <tr class="{{#if isSelectDate}}current-date{{/if}}">
+              <td class="td-date">
+                <span class="month">{{month}}</span>
+                <span class="day">{{day}}</span>
+                <span class="week">{{week}}</span>
+              </td>
+              {{#each locationList}}   
+                <td class="td-content">
+                  {{#if hasMeeting}}
+                    <a external href="./meeting-detail.html?id={{meetingId}}" class="meeting-link">
+                      <span class="time">{{meetingTime}}</span>
+                      <span class="meetingTitle">{{meetingTitle}}</span>
+                    </a>
+                  {{else}}
+                    <div class="meeting-link"></div>
+                  {{/if}}
+                </td>
+              {{/each}}
+            </tr> 
+          {{/each}}
+        </tbody>   
+      </tble>
+    </div>
+  </script> 
+
+  <script type='text/javascript' src='../js/zepto.min.js' charset='utf-8'></script>
+  <script type='text/javascript' src='../js/sm.min.js' charset='utf-8'></script>
+  <script type='text/javascript' src='../js/sm-extend.min.js' charset='utf-8'></script>
+  <script type='text/javascript' src='../js/template7.min.js' charset='utf-8'></script>
+  <script type='text/javascript' src='../js/main.js' charset='utf-8'></script>
+  <script type='text/javascript' src='../js/pages/meeting-schedule.js' charset='utf-8'></script>
+</html>

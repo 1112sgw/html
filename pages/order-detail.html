@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../css/sm.min.css">
+    <link rel="stylesheet" href="../css/sm-extend.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>电子券</title>
+  </head>
+  <body>
+    <div class="page-group">
+      <div class="page page-current">
+        <header class="bar bar-nav">
+            <a external class="button button-link button-nav pull-left" id="back">
+                <img src="../images/back.png" alt="后退" class="blue-icon" />
+            </a>
+            <h1 class="title">电子券</h1>
+        </header>
+        <div class="content gray-background">
+          <div class="order-detail">
+            
+          </div>   
+        </div>     
+      </div>
+    </div>
+    <div class="popup popup-qrcode">
+      <div class="popup-img"></div>
+    </div>  
+  <script id="template_order_detail" type="text/template7">
+    <div class="list-block">
+      <ul class="list">
+          <li class="item-content bottom-line">
+            <div class="item-inner">
+              <div class="item-title">{{orderType}}</div>
+              <div class="item-after">
+                  {{orderTitle}}
+              </div>
+            </div>
+          </li> 
+          <li class="item-content bottom-line">
+            <div class="item-inner">
+              <div class="item-title">订单号</div>
+              <div class="item-after">
+                  {{orderId}}
+              </div>
+            </div>
+          </li> 
+          <li class="item-content bottom-line orderlistLi">
+            <div class="item-inner">
+              <div class="item-title">{{listLabel}}</div>
+              <div class="item-after orderlist">
+                  {{# each orderlist}}
+                    <div class="orderlist-each">{{eachOrder}}</div>
+                  {{/each}}
+              </div>
+            </div>
+          </li> 
+          <li class="item-content bottom-line">
+            <div class="item-inner">
+              <div class="item-title">支付方式</div>
+              <div class="item-after">
+                  {{payType}}
+              </div>
+            </div>
+          </li>
+          <li class="item-content bottom-line">
+            <div class="item-inner">
+              <div class="item-title">缴费时间</div>
+              <div class="item-after">
+                  {{payTime}}
+              </div>
+            </div>
+          </li> 
+          <li class="item-content bottom-line">
+            <div class="item-inner">
+              <div class="item-title">费用合计</div>
+              <div class="item-after">
+                  {{payTotal}}
+              </div>
+            </div>
+          </li> 
+          <li class="item-content bottom-line">
+            <div class="item-inner">
+              <div class="item-title">支付状态</div>
+              <div class="item-after">
+                  <div class="{{payClass}}">{{payStatus}}</div>
+              </div>
+            </div>
+          </li>
+      </ul>
+      <div class="qrcode">
+        <img src="{{qrcodeUrl}}" />
+        <span>单子凭证二维码</span>
+      </div>
+      {{#js_if "this.payStatus === '已支付'"}}
+        <nav class="bar bar-tab footer inContent finishedPay">
+            <a external class="tab-item" href="./meeting-choose.html">申请退款</a>
+        </nav>
+      {{/js_if}}
+      {{#js_if "this.payStatus === '未支付'"}}
+        <nav class="bar bar-tab footer inContent">
+            <a external class="tab-item" href="./meeting-choose.html">支付</a>
+        </nav>
+      {{/js_if}}
+    </div>
+  </script> 
+  </body>
+  <script type='text/javascript' src='../js/zepto.min.js' charset='utf-8'></script>
+  <script type='text/javascript' src='../js/sm.min.js' charset='utf-8'></script>
+  <script type='text/javascript' src='../js/sm-extend.min.js' charset='utf-8'></script>
+  <script type='text/javascript' src='../js/template7.min.js' charset='utf-8'></script>
+  <script type='text/javascript' src='../js/main.js' charset='utf-8'></script>
+  <script type='text/javascript' src="../js/pages/order-detail.js" charset="utf-8"></script>
+  
+</html>

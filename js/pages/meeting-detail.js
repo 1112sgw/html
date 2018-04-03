@@ -1,15 +1,60 @@
 
-$(function() {
-    $.get("/",function(response){
-        var result = {
-            title: "国家会议中心位",
-            views: 40,
-            date: "2018-03-21",
-            content: "<p>和水立方之北，是一座八层楼、近400米的长形建筑。2008年奥运会期间，由击剑馆、国际广播中心组成。主新闻中心（MPC）是文字记者和摄影记者进驻的工作区，共有1000多个记者工作席位及硬件配套设施。国际广播中心建筑面积14万平方米，</p><p>是奥运会历史上最大的国际广播中心，来自全世界16000名广播记者都在此工作。奥运之后，国家会议中心经过一年多的改造投入经营，至今已走过七年历程，创造了无数辉煌，这座曾经的奥运场馆正以骄人的成绩，成为中国乃至亚洲快速成长的会展业第一品牌。<br />大量具有国际影响力的会议、展览项目陆续在国家会议中心成功举办，让这个中国会议业的旗舰场馆向世界展示了其多平台、复合型、高质量的强大综合实力，创造出了良好的经济效益和社会效益。2014年11月5日—10日</p>"
-        }
-        $(".article-title").text(result.title);
-        $(".article-date").text(result.date);
-        $(".article-views .num").text(result.views);
-        $(".article-content").html(result.content);
-    }) 
+Zepto(function($){
+    var template = $('#template_meeting_detail').html();
+    var compiledTemplate = Template7.compile(template);
+    var result = {
+        meetingList: [
+            {
+                id: 1,
+                date: "2019-06-01",
+                time: "14:35-16:30",
+                location: "多功能会议厅401楼",
+                theme: "中国肺结核节诊治共识修改 (全体大会)",
+            }  
+        ],
+        meetingHosts:[
+            {
+                id: 1,
+                imgUrl: "../images/honorary.png",
+                name: "周杰明",
+            },
+            {
+                id: 2,
+                imgUrl: "../images/honorary.png",
+                name: "肖大宝",
+            },
+        ],
+        academicList:[
+            {
+                id: 1,
+                imgUrl: "../images/honorary.png",
+                title: "中国肺结核知识修改草案",
+                subTitle: "意大利米兰Humanitas眼科医院",
+                dateTime: "10:00-10:25",
+            },
+            {
+                id: 2,
+                imgUrl: "../images/honorary.png",
+                title: "中国肺结核知识修改草案",
+                subTitle: "意大利米兰Humanitas眼科医院",
+                dateTime: "10:00-10:25",
+            },
+        ],
+    }
+    if(result.meetingList.length > 0){
+        $.each(result.meetingList, function(index, item){
+            item.index = index + 1;
+        })
+    }
+    
+    var renderHtml = function() {  
+        var html = compiledTemplate(result);
+        $(".meeting-details").html(html);
+    }
+
+    renderHtml()
+    // $.get("/",function(response){
+    //     renderHtml()
+    //     calculateTotal();
+    // }) 
 });

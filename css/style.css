@@ -1,5 +1,6 @@
 .page, .page-group {
     background: #fff;
+    color: #82786f;
 }
 img { 
     width: 100%;
@@ -15,16 +16,32 @@ ul li{
     list-style: none;
 }
 a {
-    color:#000;
+    color:#82786f;
 }
 p{
-    font-size: 0.8rem
+    font-size: 0.75rem;
+    color:#82786f;
+}
+.content{
+    font-size: 0.7rem;
+    line-height: 1.2rem;
+}
+.content-block{
+    margin: 0;
+    padding: 0 0.25rem;
+}
+.list-block{
+    margin: 0;
+    font-size: 0.62rem;
 }
 
 img.blue-icon{
-    width: 1.2rem;
+    width: 0.7rem;
     display: inline-block;
-    margin: 0.5rem 0;
+    margin: 0.7rem 0;
+}
+.button-nav img.blue-icon{
+     width: 0.9rem;
 }
 
 hr.gray {
@@ -36,44 +53,119 @@ hr.gray {
 .bar{
     background: #fff;
 }
-
-.content {
-    padding: 5px 10px;
+.blue{
+    color: #529dfe;
+}
+.red{
+    color: #d52b1e;
 }
 
+.lightgray{
+    color: #c8c8c8
+}
+
+.breakword{
+    word-break: break-all;
+}
+.darkblue{
+    color:#7f8ea0 !important
+}
+
+.meeting-organization{
+    padding:5px 10px;
+}
+.text-left{
+    text-align: left !important;
+}
 .title{
-    font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 1rem;
     border-bottom: 1px solid #d1d1d1;
 }
+.half{
+    width: 50% !important; 
+}
+.border-right{
+    border-right: 1px solid #d1d1d1; 
+}
+.inner{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+}
+
+input[type="radio"] + label::before {
+    content: "\a0"; /*不换行空格*/
+    display: inline-block;
+    font-size: 18px;
+    width: 1em;
+    height: 1em;
+    margin-right: .4em;
+    border-radius: 50%;
+    border: 1px solid #529dfe;
+    text-indent: .15em;
+    line-height: 1;
+}
+input[type="radio"]:checked + label::before {
+    background-color: #529dfe;
+    background-clip: content-box;
+}
+
+input[type="radio"] {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+.footer.inContent {
+    position: relative;
+    margin-top: 3rem;
+}
+.list-block ul li{
+    background: #fff;
+}
+.buttons-tab .button{
+    height: 2.2rem;
+    line-height: 2.2rem;
+    font-size: 0.7rem;
+}
+.buttons-tab .button.active{
+    background: #0894ec;
+    color: #fff;
+}
+
 
 /***************Right Menu*********************/
 ul.nav-menu{
     display: none;
 }
 ul.nav-menu li{
-    height: 2.2rem;
+    height: 2rem;
     display: block;
     position: relative;
     border-bottom: 1px solid #eee;
 }
 ul.nav-menu li a{
     height: 100%;
-    line-height: 2.2rem;
+    line-height: 2rem;
     float: left;
 }
 
 ul.nav-menu li a img{
     float: left;
-    margin: 0.5rem 0.6rem;
+    margin: 0.6rem;
 }
 ul.nav-menu li a span{
     float: left;
     height: 100%;
-    padding-top: 0.2rem;
-    padding-left:  0.3rem;
     color: #000;
     font-weight: 500;
+    font-size: 0.75rem;
 }
 
 ul.nav-menu.toggled-on,
@@ -98,16 +190,16 @@ ul.nav-menu.toggled-on,
 }
 
 .gray-background{
-    background: #efeff4;
+    background: #efeff4 !important;
 }
 
 /************Home page***************/
 
 .row .home-link {
-    padding: 0.5rem 0.8rem;
+    padding: 0.5rem 1.3rem;
 }
 .border-title {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: bold;
     border-left: 5px solid #529dfe;
     line-height: 1rem;
@@ -122,17 +214,32 @@ ul.nav-menu.toggled-on,
 }
 
 .home-img-title{
-    font-size: 0.8rem;
-    font-weight: bold;
+    font-size: 0.7rem;
     text-align: center;
 }
+.margin-top{
+    margin-top: 0.5rem !important;
+}
 
-
+.footer{
+    background: #529dfe;
+}
+.footer a.tab-item{
+    color: #fff;
+    font-size: 0.9rem;
+}
 /************meeting detail page***************/
 .text-center {
     text-align: center;
 }
+.article{
+    background:#fff;
+    padding:5px 10px;
+}
 
+.article h3{
+    font-size: 1rem;
+}
 .article-type{
     color: #aaa;
 }
@@ -140,7 +247,7 @@ ul.nav-menu.toggled-on,
     height: 1rem;
 }
 .article-content{
-    padding-top: 10px;
+    padding: 10px 0;
 }
 .article-date{
     margin-left:33%; 
@@ -158,20 +265,30 @@ ul.nav-menu.toggled-on,
     color: #82786f;
 }
 ul.list li{
-    padding: 10px;
+    padding: 8px;
     background: #fff;
     margin: 0 -10px;
     border-bottom: 2px solid #efeff4;
 }
 .list-title{
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight: bold;
+    height: 1.1rem;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
 }
 
 .list-description{
-    font-size: 0.8rem;
-    max-height: 1.75rem;
+    font-size: 0.7rem;
+    max-height: 1.9rem;
     overflow: hidden;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 .list-description p{
     margin: 0;
@@ -181,6 +298,11 @@ ul.list li{
     font-size: 0.7rem;
     color: #aaa;
 }
+.list-only-date{
+    font-size: 0.7rem;
+    color: #aaa;
+}
+
 .list-date{
     float: right;
     font-size: 0.7rem;
@@ -199,7 +321,6 @@ ul.list li{
     height: 100%;
 }
 .list-price{
-    font-size: 0.7rem;
     color: #aaa;
 }
 .list-price span{
@@ -220,6 +341,12 @@ ul.list li{
     font-size: 0.7rem;
     color: #aaa;
 }
+
+.list-stars{
+    color:#d57c1e;
+    font-size:0.8rem;
+}
+
 /******************organization******************/
 .org-position{
     font-weight: bold;
@@ -257,7 +384,7 @@ ul.list li{
     border-bottom: 1px solid #d1d1d1;
 }
 .select-search-area{
-    margin: -5px -10px;
+    margin: 0;
 }
 
 .select-search-area .tab {
@@ -274,4 +401,688 @@ ul.list li{
 
 .meeting-more, .meeting-video{
     padding-top: 10px;
+}
+
+/****************sign up personal*********************/
+.sign-up-personal .list-block{
+    margin: 0;
+}
+
+.sign-up-personal .list-block .item-inner{
+    padding-top:10px;
+    padding-bottom:10px; 
+}
+.sign-up-personal .list-block input{
+    height:auto;
+    font-size: .85rem;
+    line-height: inherit;
+    padding-left:  10px;
+    text-align: right
+}
+
+.meeting-type{
+    padding-top: 2.0rem;
+}
+
+.meeting-type a {
+    width: 60%;
+    padding: 0.6rem 0;
+    margin: 1.2rem auto;
+    display: block;
+    border: 1px solid #529dfe;
+    text-align: center;
+    background: #529dfe;
+    border-radius: 3px;
+    box-sizing: content-box;
+    font-size: 0.8rem;
+    color: #fff;
+}
+.meeting-choose {
+    margin: 0;
+}
+.meeting-choose .item-link .item-inner{
+    border-bottom: 0;
+}
+
+.list-block .item-inner:after{
+    height: 0;;
+}
+.list-block .item-content{
+    min-height: 2.8rem;
+    font-size: 0.75rem;
+    margin: 0;
+}
+.list-block .item-title{
+    color: #000;
+}
+.list-block .item-title img{
+    width: 0.9rem;
+    margin-right: 0.8rem;
+}
+
+.list-block .item-link .item-inner{
+    background-image: url(../images/go.png);
+    background-size: 0.5rem;
+}
+
+.choose-list ul li{
+    background:#fff;
+    padding: 10px;
+}
+.choose-list ul li span{
+    display: block;
+    font-size: 0.7rem;
+}
+.choose-list ul li span.coupon-price, 
+.choose-list ul li span.org,
+.choose-list ul li span.after-coupon{
+    display: inline-block;
+
+}
+.choose-list ul li span.choose-title{
+    font-size: 0.8rem;
+    color: #000;
+}
+.choose-list ul li span.choose-coupon{
+    color: #529dfe;
+}
+.choose-list ul li span.has-coupon,
+.choose-list ul li span.no-coupon{
+    color:#c8c8c8
+}
+.choose-list ul li span.coupon-price{
+    color: #d52b1e;
+}
+
+.choose-list .item-detail img{
+    max-height: 1rem;
+    width: auto;
+}
+
+.choose-list .item-after{
+    display: none;
+    width: 75px;
+}
+
+.common-list .coupons,
+.common-list .price-total {
+    background: #fff;
+    margin-top:0.6rem;
+    padding: 10px;
+}
+.common-list .coupons img{
+    max-height: 1rem;
+    width: auto;
+}
+.common-list .coupon-warning {
+    padding-top: 3px;
+    margin-right: 10px;
+}
+.common-list .price-total {
+    text-align: right
+}
+
+.meeting-pay .price-total{
+    background: #fff;
+    padding: 10px;
+}
+.meeting-pay .price-pay{
+    width: 70%;
+    margin: 0 auto;
+}
+.meeting-pay .pay-header{
+    margin:2rem 0;
+    width:100%;
+    text-align:center;
+    color:#c8c8c8;
+}
+
+.meeting-pay .pay-methods a{
+    padding: 5px;
+    text-align: center;
+}
+
+.meeting-class .class-list{
+    margin-top: 0.6rem;
+}
+
+.order-table{
+    width: 100%;
+    overflow-x: scroll;
+}
+.order-table .table{
+    position: absolute;
+    min-width: 100%;
+}
+.order-table .table .table-row{
+    width: 100%;
+}
+
+.common-list h3{
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 0;
+    box-sizing: content-box;
+    padding: 10px;
+    background: #fff;
+}
+.hotel-detail .tips{
+    width: 100%;
+    text-align: center;
+    font-size: 0.7rem;
+    background: #fff;
+    height: 3rem;
+    padding: 1rem 0;
+}
+
+.hotel-detail .warning{
+    width: 100%;
+    font-size: 0.7rem;
+    padding: 1.1rem;
+    background: #f2f2f2;
+}
+
+.hotel-detail .rest-info{
+    width: 100%;
+    font-size: 0.7rem;
+    padding: 1.1rem;
+    background: #fff;
+}
+.hotel-detail .rest-info .item-title{
+    color:#000;
+}
+.rest-info-li span{
+    margin-left:40px
+
+}
+
+.table_box_big{
+    overflow-x: scroll;
+    overflow-y: hidden;
+    position: relative;
+    height: 28rem;
+    background: #fff;
+}
+.table_box{
+    overflow: hidden;
+    position: absolute;
+    min-width: 100%;
+}
+.table_tbody_box{
+    overflow: scroll;
+}
+.table_box table{
+    border: 1px solid #d1d1d1;
+    width: 100%;
+}
+.table_box table thead tr th{
+    text-align: center;
+    word-break: keep-all;
+    padding: 0.4rem 0.6rem;
+    border-right: 1px solid #d1d1d1;
+    border-bottom: 1px solid #d1d1d1;
+    color: #82786f;
+    font-size: 0.7rem;
+}
+.table_box table tbody tr td{
+    padding: 0.6rem;
+    border-right: 1px solid #d1d1d1;
+    text-align: center;
+    border-bottom: 1px solid #d1d1d1;
+    word-break: keep-all;
+    font-size: 0.7rem;
+}
+.table_box table tbody tr td img{
+    width: 0.8rem;
+}
+
+.meeting-class{
+    height: calc(100% - 5.5rem);
+}
+.personal-center .qrCode{
+    width: 70%;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+.personal-center .qrCode img{
+    padding: 0.8rem 3rem 0;
+}
+
+.personal-coupon .list .thumbnail{
+    height: auto;
+}
+
+.personal-coupon ul.list li{
+    margin-top: 0.3rem;
+    position: relative;
+    border-bottom: 0;
+} 
+.personal-coupon ul.list li:first-child{
+    margin-top: 0;
+} 
+.personal-coupon ul.list li.inValid{
+    background: #e8e8e8 !important
+}
+
+.personal-coupon .list-expiry,
+.personal-coupon .list-meetingName,
+.personal-coupon .list-meetingName-valid{
+    font-size: 0.7rem;
+}
+.personal-coupon .list-meetingName-valid{
+    color: #529dfe;
+}
+.personal-coupon .expiry-img{
+    position: absolute;
+    width: 100px;
+    top: 10px;
+    right: 20px;
+}
+
+.popup-qrcode{
+    width: 60%;
+    top: 20%;
+    left: 20%;
+    z-index: 11111;
+    height: auto;
+}
+
+.video-js .vjs-big-play-button{
+    background: none;
+    border: 0;
+    left: calc(50% - 1.5rem);
+    width: 1.5rem;
+    top: calc(50% - 1.5rem);
+}
+
+.video-js .vjs-big-play-button .vjs-icon-placeholder:before {
+    content: "\f101";
+    font-size: 3rem;
+    color: #ffffff9c;
+}
+
+.video-detail{
+    background: #fff;
+    margin-top: 0.3rem;
+    padding: 10px;
+}
+.video-detail{
+    font-size: 0.8rem;
+}
+.main-title{
+    color: #000;
+}
+.info-host, .info-speaker{
+    display: inline-block;
+}
+.info-host span, .info-speaker span{
+    color: #529dfe
+}
+.info-speaker{
+    margin-left: 10px
+}
+.list-status{
+    width: 80px;
+    text-align: center;
+}
+
+.order-detail .list-block .item-after.orderlist{
+    width: 100%;
+    display: block;
+    height: auto;
+    max-height: none;
+    text-align: right;
+}
+.orderlistLi .item-title{
+    display: block;
+    top: 0.5rem;
+    position: absolute;
+}
+.order-detail .list-block .item-after.orderlist .orderlist-each{
+    width: 80%;
+    float: right;
+}
+
+.order-detail ul.list li{
+    padding: 0 0 0 10px;
+}
+
+.order-detail .qrcode{
+    margin: 2rem auto 0;
+    width: 50%;
+    text-align: center;
+}
+.order-detail .finishedPay{
+    background: #fff;
+}
+.order-detail .list-block .item-title,
+.order-detail .finishedPay a.tab-item{
+    color: #82786f;
+}
+.order-detail .list-block .item-after{
+    color: #000;
+}
+
+.tableLayoutFixed{
+    table-layout: fixed;
+}
+
+.schedule-table th.dateImg input{
+    width: 1.6rem;
+    border: 0;
+    background: url("../images/date.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 1.4rem;
+}
+
+.schedule-table th.meeting-location{
+    width: 8rem;
+}
+
+.schedule-table span.meetingTitle{
+    text-align: left;
+    display: block;
+    width: 100%;
+    max-height:  3rem;
+    overflow: hidden;
+    word-break: break-word;
+    line-height: 1rem;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.schedule-table .meeting-link{
+    height: 4.5rem;
+    display:block;
+}
+.table_box_big.schedule-table{
+    height: 45rem;
+}
+.schedule-table .td-date {
+    background: #f2f2f2;
+}
+.schedule-table span.day{
+    font-size:0.8rem;
+}
+.schedule-table .current-date .td-date{
+    background: #fff;
+}
+
+.schedule-table .current-date span.day{
+    color:#000;
+}
+.schedule-table .current-date span.week{
+    font-size:0.8rem;
+    color:#c8c8c8
+}
+
+.schedule-table th:nth-child(odd){
+    background: #f2f2f2;
+}
+
+.schedule-table th.dateImg{
+    width: 3rem;
+    background: #1c9cfe;
+}
+
+.meeting-info {
+    background: #fff;
+    padding: 10px;
+}
+.meeting-info .meeting-meta{
+    padding: 5px;
+    width: 100%;
+    line-height: 1.3rem;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    -webkit-box-pack: justify;
+}
+.meeting-info .num{
+    width: 1.2rem;
+    height: 1.2rem;
+    background:#1c9cfe;
+    display:inline-block;
+    color:#fff;
+    text-align:center;
+    border-radius:5px;
+    margin-right: 10px;
+}
+.meeting-meta .meta-icon{
+    width: 1.2rem;
+    height: 1.2rem;
+    display: inline-block;
+    text-align: center;
+    margin-right: 10px;
+}
+.meeting-meta .meta-icon img{
+    max-height:100%;
+    max-width:100%;
+    width:auto;
+    height:auto;
+    padding-top:  3px;
+}
+.meeting-details h3{
+    color:#1c9cfe;
+    font-weight:normal;
+    padding: 0px 10px;
+    font-size:0.9rem;
+}
+
+.meeting-hosts .meeting-host{
+    background:#fff;
+    padding: 10px;
+    border-bottom: 1px #cacaca solid;
+}
+.meeting-hosts .meeting-host .host-name{
+    margin-left: 10px;
+    color: #000;
+}
+
+.meeting-academic .row{
+    background:#fff;
+    padding: 10px;
+    border-bottom: 1px #cacaca solid;
+}
+.meeting-academic .row .col-80{
+    padding-left: 10px;
+}
+.meeting-academic .academic-title{
+    color:#000;
+}
+
+.expert-search {
+    height: 3rem;
+    padding: 0.5rem;
+}
+.expert-search .search-input .icon{
+    right: .5rem;
+    left: auto;
+}
+.expert-search .search-input input{
+    height: 2rem;
+    text-align: center;
+    padding-left: 0.4rem;
+    border-radius: 0.8rem;
+} 
+
+.meeting-specialists .type{
+    padding: 5px 10px;
+}
+.meeting-specialist .row{
+    background: #fff;
+    padding:10px;
+    font-size: 0.7rem;
+    line-height:1.2rem;
+}
+.meeting-specialist .row .col-80{
+    padding-left: 10px;
+}
+.meeting-specialist .row .special-name{
+    font-size: 0.8rem;
+    color:#000;
+}
+.meeting-specialist .row .special-hospital{
+    color:#1c9cfe;
+}
+.personal-schedule .my-info{
+    padding: 10px;
+    background: #fff;
+    margin-bottom: 0.3rem;;
+}
+.personal-schedule .my-info .col-80{
+    padding-left:10px;
+}
+.personal-schedule .meta-type{
+    color:#1c9cfe;
+    font-size: 0.75rem;
+}
+.personal-schedule .meetingList{
+    margin-top: 0.3rem;
+    background: #fff;
+    padding: 10px;
+}
+.personal-schedule .meeting-info{
+    background:#efeff4;
+    padding: 0;
+}
+.modal-inner{
+    padding:2rem;
+    background: #fff;
+}
+.modal-button{
+    background: #fff;
+}
+.scan-background{
+    background: #000;
+}
+#qrcode-reader{
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+#qrcode-reader #html5_qrcode_video{
+    background:url("../images/scan_back.png");
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+
+.scan-background .tips{
+    color: #1faa19;
+    text-align: center;
+    font-size:  1.0rem;
+    margin-top: 20px;
+}
+
+.question-wall .thumbnail{
+    height: auto;
+}
+.question-wall .thumb{
+    width: 0.9rem;
+    padding-top:  3px;
+    margin-left:  10px;
+}
+.question-wall .list-meta{
+    margin-top:10px;
+}
+.question-wall .list-name{
+    color:#c3c3c3;
+}
+
+.question-wall .images img{
+    max-width: 3.5rem;
+    margin: 5px;
+    float: right
+}
+.question-pull {
+    position: relative;
+}
+.question-pull textarea{
+    width: 100%;
+    border:none;
+    padding: 15px 15px 30px 15px;
+    font-size: 0.8rem;
+    position: relative;
+}
+
+.question-pull .add-picture{
+    padding: 0 15px;
+}
+.question-pull .image-viewBox img{
+    max-width: 3.5rem;
+    margin-right: 5px;
+    float: left
+}
+.question-pull .add-img {
+    max-width: 3.5rem;
+    margin-right: 10px;
+    float: left;
+}
+.question-pull #img_input{
+    display: none;
+}
+.question-pull .words{
+    position: absolute;
+    bottom: 40px;
+    right: 15px;
+}
+
+.login-form {
+    padding: 20px;
+}
+.login-form .login-input{
+    background:#fff;
+    margin:10px 0;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.login-form .get-code{
+    width: 150px;
+    text-align: center;
+    font-size: 0.7rem;
+}
+.login-form .login-button{
+    padding: 10px 0;
+    background: #0894ec;
+    color:#fff;
+    text-align: center;
+    margin-top:  2rem;
+    font-size: 0.8rem;
+    border-radius: 5px;
+}
+.login-form .login-register{
+    font-size: 0.8rem;
+    margin-top:  1rem;
+    text-align: center;
+    display: block;
+    text-decoration: underline;
+}
+.login-third-part .third-part-title{
+    font-size: 0.8rem;
+    display: block;
+    text-align: center
+}
+.login-third-part{
+    margin-top: 2rem;
+}
+.login-third-part .login-ways .col-50{
+    padding: 1rem;
+    text-align: center;
+}
+
+.login-ways{
+    width: 60%;
+    margin: 0 auto;
+    margin-left: auto !important;
+}
+.login-third-part .login-ways .col-50 img{
+    border-radius: 50%;
 }
