@@ -15,7 +15,7 @@
                     width = 250;
                 }
 
-                var vidElem = $('<video width="' + width + 'px" height="' + height + 'px"></video>').appendTo(currentElem);
+                var vidElem = $('<video id="html5_qrcode_video" width="' + width + 'px" height="' + height + 'px"></video>').appendTo(currentElem);
                 var canvasElem = $('<canvas id="qr-canvas" width="' + (width - 2) + 'px" height="' + (height - 2) + 'px" style="display:none;"></canvas>').appendTo(currentElem);
 
                 var video = vidElem[0];

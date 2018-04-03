@@ -603,6 +603,7 @@ ul.list li{
     height: 28rem;
     background: #fff;
 }
+
 .table_box{
     overflow: hidden;
     position: absolute;
@@ -967,6 +968,8 @@ ul.list li{
 #qrcode-reader{
     margin: 0 auto;
     margin-top: 2rem;
+    position: relative;
+    z-index: 9999999;
 }
 #qrcode-reader #html5_qrcode_video{
     background:url("../images/scan_back.png");
@@ -1085,4 +1088,8 @@ ul.list li{
 }
 .login-third-part .login-ways .col-50 img{
     border-radius: 50%;
+}
+
+.hotel-detail .table_box_big{
+    height: 12rem;
 }
