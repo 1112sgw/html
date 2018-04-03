@@ -12,7 +12,7 @@
                 }
 
                 if (width == null) {
-                    width = 300;
+                    width = 250;
                 }
 
                 var vidElem = $('<video width="' + width + 'px" height="' + height + 'px"></video>').appendTo(currentElem);
@@ -53,10 +53,17 @@
                 };
 
                 // Call the getUserMedia method with our callback functions
-                if (navigator.getUserMedia) {
-                    navigator.getUserMedia({video: { facingMode: { exact: "environment" }}}, successCallback, function(error) {
-                        videoError(error, localMediaStream);
-                    });
+                if (navigator.mediaDevices) {
+                    navigator.mediaDevices.getUserMedia({video: { facingMode: { exact: "environment" }}})
+                    .then(function(mediaStream) {
+                        successCallback(mediaStream)
+                    })
+                    .catch(function(error) 
+                    {  videoError(error, localMediaStream); });
+
+                    // navigator.getUserMedia(, successCallback, function(error) {
+                       
+                    // });
                 } else {
                     console.log('Native web camera streaming (getUserMedia) not supported in this browser.');
                     // Display a friendly "sorry" message to the user
