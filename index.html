@@ -1,84 +1,182 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <link rel="shortcut icon" href="./favicon.ico">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="stylesheet" href="./css/sm.min.css">
-    <link rel="stylesheet" href="./css/sm-extend.min.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>首页</title>
-  </head>
-  <body>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <link href="./content/iSlider.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #fff;
+            overflow: hidden;
+            font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+        }
 
-    <div class="page-group">
-      <div class="page page-current">
-        <header class="bar bar-nav">
-            <a external class="button button-link button-nav pull-left">
-                <img src="./images/logo.png" alt="中国危重病医学大会" class="blue-icon" />
-            </a>
-            <h1 class="title">中国危重病医学大会 - 2018</h1>
-            <a href="javascript:void(0)" class="button button-link button-nav pull-right" id="personal">
-                <img src="./images/menu.png" alt="菜单" class="blue-icon" />
-            </a>
-            <nav role="navigation" class="menu-mobile_menu-container">
-                <ul id="menu-mobile_menu" class="nav-menu">
-                    <li>
-                        <a external href="/pages/personal-center.html">
-                            <img src="./images/user.png" alt="个人中心" class="blue-icon" />
-                            <span>个人中心</span>
-                        </a>
-                    </li>
-                    <li class="coming">
-                        <a external href="./pages/personal-scan.html">
-                            <img src="./images/scan.png" alt="扫一扫" class="blue-icon" />
-                            <span class="span-soon">扫一扫</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <div class="content">
-            <!-- Slider -->
-          <div class="swiper-container">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide"><img src="./images/slider1.png" alt=""></div>
-              <div class="swiper-slide"><img src="./images/slider2.png" alt=""></div>
-              <div class="swiper-slide"><img src="./images/slider3.png" alt=""></div>
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
+        /*ul wrapper*/
+        #iSlider-wrapper {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            position: absolute;
+        }
 
-          <div class="content-padded grid-demo" id="link_area">
-            <div class="row no-gutter">     
-            </div>
-          </div>
-          <hr class="gray" />
-          <div class="content-padded grid-demo" id="introduction">
-            <div class="border-title">大会简介</div>
-            <p>
-                国家会议中心位于鸟巢和水立方之北，是一座八层楼、近400米的长形建筑。2008年奥运会期间，由击剑馆、国际广播中心组成。
-                主新闻中心（MPC）是文字记者和摄影记者进驻的工作区，共有1000多个记者工作席位及硬件配套设施。国际广播中心建筑面积14万平方米，是奥运会历史上最大的国际广播中心，来自全世界16000名广播记者都在此工作。
-                奥运之后，国家会议中心经过一年多的改造投入经营，至今已走过七年历程，创造了无数辉煌，这座曾经的奥运场馆正以骄人的成绩，成为中国乃至亚洲快速成长的会展业第一品牌。大量具有国际影响力的会议、展览项目陆续在国家会议中心成功举办，让这个中国会议业的旗舰场馆向世界展示了其多平台、复合型、高质量的强大综合实力，创造出了良好的经济效益和社会效益。
-                2014年11月5日—10日，来自21个经济体以及这 21个经济体以外的17个国家和地区的领导人、高级官员和工商界人士相继出席APEC会议周[1]  。国家会议中心作为本次APEC会议的“主力场馆”承担着为期7天的领导人会议周中6天的接待任务，为210场规模不等的会议和活动、165场餐饮和约9.1万人次提供了专业、细致、高效的会议服务。国家会议中心再次成为世界瞩目的焦点[1]  。国家会议中心借此成为一个重大外事国务活动的接待场所，也变成了世界级的会展品牌[2]  。
-            </p>
-          </div>
-        </div>
+        #iSlider-wrapper ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
 
-        <nav class="bar bar-tab footer">
-            <a external class="tab-item external" href="/pages/signup.html">我要报名</a>
-        </nav>
-      </div>
-    </div>
-   
-  </body>
-  <script type='text/javascript' src='./js/zepto.min.js' charset='utf-8'></script>
-  <script type='text/javascript' src='./js/sm.min.js' charset='utf-8'></script>
-  <script type='text/javascript' src='./js/sm-extend.min.js' charset='utf-8'></script>
-  <script type='text/javascript' src='./js/template7.min.js' charset='utf-8'></script>
-  <script type='text/javascript' src='./js/main.js' charset='utf-8'></script>
-  <script type='text/javascript' src="./js/pages/home.js" charset="utf-8"></script>
+        #iSlider-wrapper li {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-pack: center;
+            -webkit-box-align: center;
+            list-style: none;
+        }
+
+        #iSlider-wrapper li img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .music-btn {
+            float: right;
+            width: 1.8333333333333rem;
+            height: 1.8333333333333rem;
+            background: url('./images/music-icon.png');
+            background-size: cover;
+        }
+
+        .music-btn.on {
+            -webkit-animation: reverseRotataZ 1.2s linear infinite;
+        }
+
+        .media-wrap {
+            overflow: hidden;
+            position: fixed;
+            top: 2.9166666666667rem;
+            right: 1.375rem;
+            z-index: 10000;
+            width: 6.5em;
+            height: 6.5em;
+            font-size: 16px;
+        }
+
+        .media-wrap span {
+            float: left;
+            height: 4em;
+            width: 4em;
+            line-height: 3rem;
+            color: #fff;
+            font-size: 1em;
+        }
+
+        .media-wrap i {
+            width: 2.5em;
+            height: 2.5em;
+        }
+
+        @-webkit-keyframes reverseRotataZ {
+            0% {
+                -webkit-transform: rotateZ(0deg);
+            }
+            100% {
+                -webkit-transform: rotateZ(-360deg);
+            }
+        }
+
+        /* Arrow */
+        #iSlider-arrow {
+            position: absolute;
+            width: 3em;
+            height: 3em;
+            left: 0;
+            right: 0;
+            bottom: 5%;
+            margin: 0 auto;
+            border-top: 2px solid #fff;
+            border-right: 2px solid #fff;
+            z-index: 10000;
+            opacity: 0.8;
+            -webkit-animation: nextPage 1.2s linear infinite;
+        }
+
+        @-webkit-keyframes nextPage {
+            0% {
+                -webkit-transform: translateY(40px) rotate(-45deg);
+                opacity: 0.8;
+            }
+            50% {
+                -webkit-transform: translateY(20px) rotate(-45deg);
+                opacity: 0.4;
+            }
+            100% {
+                -webkit-transform: translateY(10px) rotate(-45deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<!-- Outer Canvas 外层画布 -->
+<div id="iSlider-wrapper"></div>
+<aside class="media-wrap">
+    <span id="musicBtnTxt" style="display: none;">关闭</span>
+    <i id="musicBtn" class="music-btn"></i>
+</aside>
+<audio src="./content/music.mp3" autoplay="false" loop="loop" id="autoplay"></audio>
+<script src="./content/iSlider.min.js"></script>
+<script id="show-code">
+    var list = [
+        {content: "./images/1.jpg"},
+        {content: "./images/2.jpg"},
+        {content: "./images/3.jpg"},
+        {content: "./images/4.jpg"},
+        {content: "./images/5.jpg"},
+    ];
+
+    var islider = new iSlider({
+        data: list,
+        dom: document.getElementById("iSlider-wrapper"),
+        isLooping: 1,
+        isOverspread: 1,
+        isAutoplay: 1,
+        animateTime: 800,
+        animateType: 'rotate',
+    });
+
+    var audio = document.getElementById('autoplay');
+    var controller = document.getElementById('musicBtn');
+    var controllerHint = document.getElementById('musicBtnTxt');
+
+    document.getElementById('musicBtn').addEventListener('touchstart', function () {
+
+        controllerHint.style.display = '';
+        if (audio.paused) {
+            audio.play();
+            controller.className = 'music-btn on';
+            controllerHint.innerHTML = '开始';
+        } else {
+            audio.pause();
+            controller.className = 'music-btn';
+            controllerHint.innerHTML = '关闭';
+        }
+
+        setTimeout(function () {
+            controllerHint.style.display = 'none';
+        }, 1000);
+
+    }, false);
+
+</script>
+</body>
 </html>
