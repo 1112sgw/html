@@ -140,7 +140,7 @@
             position: absolute;
             left: 5%;
             top: 40px;
-            background: rgba(255, 255, 255, 0.55);
+            background: rgba(255, 255, 255, 0.7);
             z-index: 9;
             max-height: calc(100% - 170px);
             overflow: scroll;
@@ -148,6 +148,17 @@
             box-sizing: border-box;
             border-radius: 10px;
             display: none;
+        }
+        .close{
+            position: absolute;
+            right: 0;
+            width: 25px;
+            height: 25px;
+            background: #f5f5f5;
+            text-align: center;
+            border-radius: 50%;
+            top: 0;
+            line-height: 25px;
         }
         .audiojs { 
             width: 100%;
@@ -160,6 +171,7 @@
             width: calc(100% - 160px);
             margin: 15px 10px;
             height: 4px;
+            overflow: visible;
         }
         .audiojs .play-pause {
             border-right: 0;
@@ -173,6 +185,15 @@
             z-index: 1;
             background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #3eb900), color-stop(0.5, #3eb900), color-stop(0.51, #3eb900), color-stop(1, #3eb900));
             background-image: -moz-linear-gradient(center top, #3eb900 0%, #ddd 50%, #3eb900 51%, #3eb900 100%);
+        }
+        .audiojs .progress span{
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            right: -5px;
+            background: #fff;
+            top: -5px;
+            border-radius: 50%;
         }
         .audiojs .loaded{
             height: 4px;
@@ -193,6 +214,11 @@
             width: calc(100% - 2px);
             border: 1px solid #aaa;
         }
+        .input-area input {
+            width: calc(100% - 20px);
+            margin: 10px;
+            font-size: 16px;
+        }
         @-webkit-keyframes nextPage {
             0% {
                 -webkit-transform: translateY(40px) rotate(-45deg);
@@ -212,6 +238,7 @@
 
 <body>
 <div class="lyrics">
+    <div class="close">X</div>
     <p>啊，若然能将一切舍弃的话</p>
     <p>笑着活下去这样的事就会变的轻松吗？</p>
     <p>胸口又再疼痛起来呢</p>
@@ -232,10 +259,11 @@
 <!-- Outer Canvas 外层画布 -->
 <div id="iSlider-wrapper"></div>
 <div class="select-paper">
-    <a class="image" href="./result.html?type=1"><img src="./images/1.jpg"></a>
-    <a class="image" href="./result.html?type=2"><img src="./images/2.jpg"></a>
-    <a class="image" href="./result.html?type=3"><img src="./images/3.jpg"></a>
-    <a class="image" href="./result.html?type=4"><img src="./images/4.jpg"></a>
+    <div class="input-area"><input type="text" id="input" placeholder="请输入生成文字" /></div>
+    <a class="image" data-id="1"><img src="./images/1.jpg"></a>
+    <a class="image" data-id="2"><img src="./images/2.jpg"></a>
+    <a class="image" data-id="3"><img src="./images/3.jpg"></a>
+    <a class="image" data-id="4"><img src="./images/4.jpg"></a>
 </div>
 <audio src="./content/music.mp3" id="autoplay" preload="auto"></audio>
 <div class="toEndArea">
@@ -266,13 +294,21 @@
     Zepto(function($){
         var as = audiojs.createAll();
         var audio = as[0];
+        $(".progress").html("<span></span>")
         $(".toEndArea").on("click",".end-btn",function(){
             //islider.slideTo(4)
             $(".select-paper").toggle()
         }) 
         $(".toEndArea").on("click",".show-lyrics",function(){
-
             $(".lyrics").toggle()
+        })
+
+        $(".lyrics").on("click",".close",function(){
+            $(".lyrics").hide()
+        })
+        
+        $(".select-paper").on("click", ".image", function(){
+            window.location = "./result.html?type=" + $(this).attr("data-id") + "&content=" + $("#input").val()
         })
 
         islider.on("slideChanged",function(index){

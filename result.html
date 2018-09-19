@@ -23,6 +23,15 @@
             bottom: 0;
             width: 100%;
         }
+        .top{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 50px;
+            background: #fff;
+            line-height: 50px;
+            text-align: center;
+        }
         img{
             width: 100%;
         }
@@ -33,6 +42,7 @@
 <body>
 <!-- Outer Canvas 外层画布 -->
 <div class="main"></div>
+<div class="top"></div>
 <div class="text"><img src="./images/5.jpg"></div>
 <script src="./content/zepto.min.js"></script>
 
@@ -47,7 +57,10 @@
                     return null;
                 }
             }
-        $('.main').html("<img src='./images/"+ getQueryString("type") + ".jpg'>")
+        $('.main').html("<img src='./images/"+ getQueryString("type") + ".jpg'>");
+        if(getQueryString("content") && getQueryString("content") !== "") {
+            $('.top').text(getQueryString("content"))
+        }
     })
 </script>
 </body>
