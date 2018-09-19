@@ -108,7 +108,52 @@
             opacity: 0.8;
             -webkit-animation: nextPage 1.2s linear infinite;
         }
+        .toEndArea {
+            width: 100%;
+            bottom: 0;
+            height: 50px;
+            position: absolute; 
+            background: rgba(64, 64, 64, 0.6);    
+        }
+        .toEndArea .end-btn {
+            width: 200px;
+            margin: 0 auto;
+            height: 30px;
+            border-radius: 8px;
+            color: #fff;
+            background: rgba(79, 129, 189);
+            text-align: center;
+            line-height: 30px;
+        }
 
+        .audiojs { 
+            width: 100%;
+            bottom: 50px;
+            position: absolute; 
+            background: rgba(64, 64, 64, 0.6); 
+            box-shadow: none;   
+        }
+        .audiojs .scrubber {
+            width: calc(100% - 160px);
+            margin: 15px 10px;
+            height: 4px;
+        }
+        .audiojs .play-pause {
+            border-right: 0;
+        }
+        .audiojs .time{
+            border-left: 0;
+        }
+        .audiojs .progress{
+            height: 4px;
+            background: #3eb900;
+            z-index: 1;
+            background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #3eb900), color-stop(0.5, #3eb900), color-stop(0.51, #3eb900), color-stop(1, #3eb900));
+            background-image: -moz-linear-gradient(center top, #3eb900 0%, #ddd 50%, #3eb900 51%, #3eb900 100%);
+        }
+        .audiojs .loaded{
+            height: 4px;
+        }
         @-webkit-keyframes nextPage {
             0% {
                 -webkit-transform: translateY(40px) rotate(-45deg);
@@ -129,12 +174,13 @@
 <body>
 <!-- Outer Canvas 外层画布 -->
 <div id="iSlider-wrapper"></div>
-<aside class="media-wrap">
-    <span id="musicBtnTxt" style="display: none;">关闭</span>
-    <i id="musicBtn" class="music-btn"></i>
-</aside>
-<audio src="./content/music.mp3" autoplay="false" loop="loop" id="autoplay"></audio>
+<audio src="./content/music.mp3" id="autoplay" preload="auto"></audio>
+<div class="toEndArea">
+    <div class="end-btn">生成海报</div>
+</div>
+<script src="./content/zepto.min.js"></script>
 <script src="./content/iSlider.min.js"></script>
+<script src="./content/audiojs/audio.min.js"></script>
 <script id="show-code">
     var list = [
         {content: "./images/1.jpg"},
@@ -154,28 +200,24 @@
         animateType: 'rotate',
     });
 
-    var audio = document.getElementById('autoplay');
-    var controller = document.getElementById('musicBtn');
-    var controllerHint = document.getElementById('musicBtnTxt');
+    Zepto(function($){
+        var as = audiojs.createAll();
+        var audio = as[0];
 
-    document.getElementById('musicBtn').addEventListener('touchstart', function () {
-
-        controllerHint.style.display = '';
-        if (audio.paused) {
-            audio.play();
-            controller.className = 'music-btn on';
-            controllerHint.innerHTML = '开始';
-        } else {
-            audio.pause();
-            controller.className = 'music-btn';
-            controllerHint.innerHTML = '关闭';
-        }
-
-        setTimeout(function () {
-            controllerHint.style.display = 'none';
-        }, 1000);
-
-    }, false);
+        $(".toEndArea").on("click",".end-btn",function(){
+            islider.slideTo(4)
+        }) 
+        islider.on("slideChanged",function(index){
+            if(index === 4){
+                $(".toEndArea").hide();
+                $(".audiojs").hide();
+                audio.playPause()
+            }else{
+                $(".toEndArea").show();
+                $(".audiojs").show();
+            }
+        })
+    });
 
 </script>
 </body>
