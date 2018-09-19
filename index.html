@@ -113,11 +113,12 @@
             bottom: 0;
             height: 50px;
             position: absolute; 
-            background: rgba(64, 64, 64, 0.6);    
+            background: rgba(64, 64, 64, 0.6);   
+            display: flex; 
+            justify-content: space-around;
         }
         .toEndArea .end-btn {
-            width: 200px;
-            margin: 0 auto;
+            width: 150px;
             height: 30px;
             border-radius: 8px;
             color: #fff;
@@ -125,7 +126,29 @@
             text-align: center;
             line-height: 30px;
         }
-
+        .toEndArea .show-lyrics{
+            width: 150px;
+            height: 30px;
+            border-radius: 8px;
+            color: #fff;
+            background: #4f81bd;
+            text-align: center;
+            line-height: 30px;
+        }
+        .lyrics{
+            width: 90%;
+            position: absolute;
+            left: 5%;
+            top: 40px;
+            background: rgba(255, 255, 255, 0.55);
+            z-index: 9;
+            max-height: calc(100% - 170px);
+            overflow: scroll;
+            padding: 10px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            display: none;
+        }
         .audiojs { 
             width: 100%;
             bottom: 50px;
@@ -154,6 +177,22 @@
         .audiojs .loaded{
             height: 4px;
         }
+        .select-paper{
+            display: none;
+            position: absolute;
+            bottom: 80px;
+            background: rgba(64, 64, 64, 0.6);
+        }
+        .select-paper .image{
+            float: left;
+            width: 25%;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        .select-paper .image img{
+            width: calc(100% - 2px);
+            border: 1px solid #aaa;
+        }
         @-webkit-keyframes nextPage {
             0% {
                 -webkit-transform: translateY(40px) rotate(-45deg);
@@ -172,11 +211,36 @@
 </head>
 
 <body>
+<div class="lyrics">
+    <p>啊，若然能将一切舍弃的话</p>
+    <p>笑着活下去这样的事就会变的轻松吗？</p>
+    <p>胸口又再疼痛起来呢</p>
+    <p>够了什麼都不要说了啊</p>
+    <p>啊，若然一切都能尽数忘却的话</p>
+    <p>不再哭泣而活下去这事亦会变得轻松吗？</p>
+    <p>然而那般的事是不可能的呢</p>
+    <p>够了什麼都不要再给我看啊</p>
+    <p>就算怎样接近你</p>
+    <p>我的心脏亦是仅此唯一的</p>
+    <p>太残酷了　太残酷了，乾脆将我的身体</p>
+    <p>破坏吧　撒裂吧　随你喜欢地处置吧</p>
+    <p>不论怎样呼叫　怎样挣扎　怎样哭得双眼红肿也好</p>
+    <p>已经够了啊</p>
+    <p>呐，若然我的愿望能得以实现的话</p>
+    <p>我想要得到与你相同的事物呢</p>
+</div>
 <!-- Outer Canvas 外层画布 -->
 <div id="iSlider-wrapper"></div>
+<div class="select-paper">
+    <a class="image" href="./result.html?type=1"><img src="./images/1.jpg"></a>
+    <a class="image" href="./result.html?type=2"><img src="./images/2.jpg"></a>
+    <a class="image" href="./result.html?type=3"><img src="./images/3.jpg"></a>
+    <a class="image" href="./result.html?type=4"><img src="./images/4.jpg"></a>
+</div>
 <audio src="./content/music.mp3" id="autoplay" preload="auto"></audio>
 <div class="toEndArea">
     <div class="end-btn">生成海报</div>
+    <div class="show-lyrics">查看歌词</div>
 </div>
 <script src="./content/zepto.min.js"></script>
 <script src="./content/iSlider.min.js"></script>
@@ -187,7 +251,6 @@
         {content: "./images/2.jpg"},
         {content: "./images/3.jpg"},
         {content: "./images/4.jpg"},
-        {content: "./images/5.jpg"},
     ];
 
     var islider = new iSlider({
@@ -203,10 +266,15 @@
     Zepto(function($){
         var as = audiojs.createAll();
         var audio = as[0];
-
         $(".toEndArea").on("click",".end-btn",function(){
-            islider.slideTo(4)
+            //islider.slideTo(4)
+            $(".select-paper").toggle()
         }) 
+        $(".toEndArea").on("click",".show-lyrics",function(){
+
+            $(".lyrics").toggle()
+        })
+
         islider.on("slideChanged",function(index){
             if(index === 4){
                 $(".toEndArea").hide();

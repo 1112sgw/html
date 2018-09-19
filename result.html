@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #fff;
+            overflow: hidden;
+            font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+        }
+        .main{
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            position: absolute;
+        }
+        .text{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        img{
+            width: 100%;
+        }
+        
+    </style>
+</head>
+
+<body>
+<!-- Outer Canvas 外层画布 -->
+<div class="main"></div>
+<div class="text"><img src="./images/5.jpg"></div>
+<script src="./content/zepto.min.js"></script>
+
+<script>
+    Zepto(function($){
+        var getQueryString = function(name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); // 匹配目标参数
+                var result = window.location.search.substr(1).match(reg); // 对querystring匹配目标参数
+                if(result !== null) {
+                    return decodeURIComponent(result[2]);
+                } else {
+                    return null;
+                }
+            }
+        $('.main').html("<img src='./images/"+ getQueryString("type") + ".jpg'>")
+    })
+</script>
+</body>
+</html>
